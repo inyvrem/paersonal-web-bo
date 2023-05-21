@@ -13,7 +13,7 @@ const SidebarChildDisclosureItem: React.FC<SidebarChildDisclosureItemProps> = ({
   children,
 }) => {
   return (
-    <Disclosure as="li" className="w-full">
+    <Disclosure as="li" className="w-full my-0 mx-0">
       <Disclosure.Button
         className={
           (isActive ? "font-semibold" : "") +
@@ -38,7 +38,7 @@ const SidebarChildDisclosureItem: React.FC<SidebarChildDisclosureItemProps> = ({
       >
         <Disclosure.Panel
           as="ul"
-          className="py-0 ml-5.4 pl-4 text-3.4 relative my-0 mr-4 flex flex-wrap items-center whitespace-nowrap bg-transparent pr-4 font-semibold text-slate-800 shadow-none transition-colors duration-200 ease-soft-in-out  dark:text-white dark:opacity-100"
+          className="flex flex-wrap text-sm text-slate-700 transition-all duration-200 ease-soft-in-out"
         >
           {children}
         </Disclosure.Panel>

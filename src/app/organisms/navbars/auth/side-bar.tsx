@@ -78,9 +78,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
                 <SidebarChildItem
                   title={"Home " + Constant.SIDE_BAR_OVERVIEW_TITLE}
                   link={Route.PAGES + "home"}
-                  isActive={
-                    currentPath === Route.PAGES + "home"
-                  }
+                  isActive={currentPath === Route.PAGES + "home"}
                 />
                 <SidebarChildItem
                   title={Constant.SIDE_BAR_ALL_SECTIONS_TITLE}
