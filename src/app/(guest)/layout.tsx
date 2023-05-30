@@ -1,4 +1,4 @@
-import GuestFooter from "@/app/organisms/footers/guest/footer"
+import GuestFooter from "@/components/organisms/footers/guest/footer"
 
 interface GuestLayoutProps {
   children: React.ReactNode

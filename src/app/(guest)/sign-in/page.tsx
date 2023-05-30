@@ -1,4 +1,4 @@
-import SignInTemplate from "@/app/templates/sign-in/template"
+import SignInTemplate from "@/components/templates/sign-in/template"
 
 const SignInPage: React.FC<{}> = () => {
   return <SignInTemplate />

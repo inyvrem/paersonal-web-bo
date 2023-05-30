@@ -1,6 +1,6 @@
-import Navbar from "@/app/organisms/navbars/auth/nav-bar"
-import Footer from "@/app/organisms/footers/auth/footer"
-import Sidebar from "@/app/organisms/navbars/auth/side-bar"
+import Navbar from "@/components/organisms/navbars/auth/nav-bar"
+import Footer from "@/components/organisms/footers/auth/footer"
+import Sidebar from "@/components/organisms/navbars/auth/side-bar"
 
 interface AuthLayoutProps {
   children: React.ReactNode

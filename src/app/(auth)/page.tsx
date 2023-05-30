@@ -1,4 +1,4 @@
-import HomeTemplate from "@/app/templates/home/template"
+import HomeTemplate from "@/components/templates/home/template"
 
 const HomePage: React.FC<{}> = () => {
   return <HomeTemplate />

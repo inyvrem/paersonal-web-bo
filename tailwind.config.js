@@ -723,7 +723,7 @@ const tailwindConfig = {
       DEFAULT: "1",
     },
     fontFamily: {
-      sans: ["Open Sans", "sans-serif"],
+      sans: ['var(--font-open-sans)'],
       serif: ['SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace', "serif"],
       body: ["Roboto", "sans-serif"],
       awesome: ["FontAwesome"],

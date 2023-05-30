@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .theme-color {
+    @apply bg-gradient-to-tl from-blue-700 to-teal-400;
+  }
+}
+
+/* React Quill Toolbar Custom Styling */
+.quill.ql-custom-styling {
+  .ql-toolbar {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .ql-container {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 106px;
+  }
+}

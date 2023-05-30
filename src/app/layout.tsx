@@ -1,14 +1,18 @@
-import { NextFont } from "next/dist/compiled/@next/font"
+import { NextFontWithVariable } from "next/dist/compiled/@next/font"
 import { Open_Sans } from "next/font/google"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@/styles/globals.css"
 
 config.autoAddCss = false
 
-const openSans: NextFont = Open_Sans({ subsets: ["latin"] })
+const open_sans: NextFontWithVariable = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-open-sans"
+})
 
-const defaultStyle: string =
-  " m-0 font-sans antialiased font-normal text-left leading-default text-base dark:bg-slate-950 bg-gray-50 text-slate-500 dark:text-white"
+const default_style: string =
+  "m-0 font-sans antialiased font-normal text-left leading-default text-base dark:bg-slate-950 bg-gray-50 text-slate-500 dark:text-white"
 
 export const metadata = {
   title: "Create Next App",
@@ -21,8 +25,8 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
-      <body className={openSans.className + defaultStyle}>{children}</body>
+    <html lang="en" className={`${open_sans.variable}`}>
+      <body className={default_style}>{children}</body>
     </html>
   )
 }
