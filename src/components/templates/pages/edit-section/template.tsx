@@ -3,7 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { usePathname } from "next/navigation"
 import { useMemo, useState } from "react"
 import "react-quill/dist/quill.snow.css"
 import Conditional from "@/components/molecules/conditional"
@@ -13,15 +12,21 @@ import TableBodyItem from "@/components/atoms/table/body/table-body-item"
 import Card from "@/components/atoms/card/card"
 import { RouteConstant } from "@/lib/constants/route-constant"
 
-interface EditSectionPageTemplateProps {}
+interface EditSectionPageTemplateProps {
+  params: { page: string; section: string }
+}
 
-const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = () => {
+const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = ({
+  params,
+}) => {
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill"), { ssr: false }),
     []
   )
   const [descriptionValue, setDescriptionValue] = useState("")
-  const currentPath: string = usePathname() + RouteConstant.ELEMENTS
+  const { page, section } = params
+  const currentPath =
+    RouteConstant.PAGES + page + "/" + section + RouteConstant.ELEMENTS
 
   return (
     <>
@@ -163,7 +168,7 @@ const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = () => {
                     </TableBodyItem>
                     <TableBodyItem className="w-full">
                       <Link
-                        href={currentPath + "service-1" + RouteConstant.EDIT}
+                        href={`${currentPath}service-1${RouteConstant.EDIT}`}
                       >
                         <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
                           <button type="button">Edit</button>

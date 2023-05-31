@@ -14,8 +14,7 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
   params,
 }) => {
   const { page } = params
-  const currentPath: string =
-    RouteConstant.PAGES + page + RouteConstant.SECTIONS + "/"
+  const currentPath: string = RouteConstant.PAGES + page + "/"
 
   return (
     <>
@@ -48,9 +47,7 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
                   </div>
                 </TableBodyItem>
                 <TableBodyItem>
-                  <Link
-                    href={currentPath + "hero" + RouteConstant.EDIT}
-                  >
+                  <Link href={currentPath + "hero" + RouteConstant.EDIT}>
                     <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
                       <button type="button">Edit</button>
                     </div>

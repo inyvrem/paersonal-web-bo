@@ -11,7 +11,7 @@ export namespace Constant {
   export const SIDE_BAR_SITES_TITLE: string = "Sites"
 
   export const SIDE_BAR_ALL_USERS_TITLE: string = "All Users"
-  export const SIDE_BAR_NEW_USER_TITLE: string = "New User"
+  export const SIDE_BAR_CREATE_USER_TITLE: string = "Create User"
 
   // Nav bar
 

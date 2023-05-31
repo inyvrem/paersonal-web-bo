@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import NewSectionPage from "@/app/(auth)/pages/[page]/all-sections/[section]/new/page"
+import NewSectionPage from "@/app/(auth)/pages/[page]/[section]/create/page"
 
 describe("Test Suite - New Section Page", () => {
   it("render a new section page title & description", () => {

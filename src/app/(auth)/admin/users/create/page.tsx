@@ -1,4 +1,4 @@
-import NewUserPageTemplate from "@/components/templates/admin/users/new-user/template"
+import NewUserPageTemplate from "@/components/templates/admin/users/create-user/template"
 
 interface NewUserPageProps {}
 

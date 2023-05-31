@@ -81,9 +81,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
                 />
                 <SidebarChildItem
                   title={Constant.SIDE_BAR_ALL_SECTIONS_TITLE}
-                  link={RouteConstant.PAGES + "home" + RouteConstant.SECTIONS}
+                  link={
+                    RouteConstant.PAGES + "home" + RouteConstant.ALL_SECTIONS
+                  }
                   isActive={currentPath.includes(
-                    RouteConstant.PAGES + "home" + RouteConstant.SECTIONS
+                    RouteConstant.PAGES + "home" + RouteConstant.ALL_SECTIONS
                   )}
                 />
               </SidebarChildDisclosureItem>
@@ -96,7 +98,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
             <SidebarRootDisclosureItem
               title={Constant.SIDE_BAR_USERS_TITLE}
               icon={IconConstant.USERS}
-              isActive={currentPath.includes(RouteConstant.ADMIN)}
+              isActive={currentPath.includes(RouteConstant.USERS)}
             >
               <SidebarChildItem
                 title={Constant.SIDE_BAR_ALL_USERS_TITLE}
@@ -105,9 +107,9 @@ const Sidebar: React.FC<SidebarProps> = () => {
                 bullet
               />
               <SidebarChildItem
-                title={Constant.SIDE_BAR_NEW_USER_TITLE}
-                link={RouteConstant.NEW_USER}
-                isActive={currentPath === RouteConstant.NEW_USER}
+                title={Constant.SIDE_BAR_CREATE_USER_TITLE}
+                link={RouteConstant.CREATE_USER}
+                isActive={currentPath === RouteConstant.CREATE_USER}
                 bullet
               />
             </SidebarRootDisclosureItem>

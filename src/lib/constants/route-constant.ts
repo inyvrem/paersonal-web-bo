@@ -7,8 +7,10 @@ export namespace RouteConstant {
 
   // Side bar
   export const PAGES: string = "/pages/"
-  export const SECTIONS: string = "/all-sections"
-  export const ADMIN: string = "/admin/"
-  export const ALL_USERS: string = "/admin/users/all-users"
-  export const NEW_USER: string = "/admin/users/new-user"
+  export const ALL_SECTIONS: string = "/all-sections"
+
+  const ADMIN: string = "/admin/"
+  export const USERS: string = ADMIN + "users/"
+  export const ALL_USERS: string = USERS + "all-users"
+  export const CREATE_USER: string = USERS + "create"
 }

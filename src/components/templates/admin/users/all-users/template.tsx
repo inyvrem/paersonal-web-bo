@@ -64,7 +64,7 @@ const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
                 </TableBodyItem>
                 <TableBodyItem className="leading-normal text-sm text-center">
                   <Link
-                    href={RouteConstant.ALL_USERS + "/" + "10421"}
+                    href={RouteConstant.USERS + "10421"}
                   >
                     <button
                       type="button"
