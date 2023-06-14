@@ -113,6 +113,30 @@ const Sidebar: React.FC<SidebarProps> = () => {
                 bullet
               />
             </SidebarRootDisclosureItem>
+            <Link href={""}>
+              <SidebarRootItem
+                title={Constant.SIDE_BAR_SITES_TITLE}
+                icon={IconConstant.HOME}
+              />
+            </Link>
+          </li>
+          <li className="mt-4 w-full">
+            <SidebarSection title={Constant.SIDE_BAR_DOCS_TITLE} />
+          </li>
+          <li className="mt-0.5 w-full">
+
+          </li>
+          <li className="mt-4 w-full">
+            <SidebarSection title={Constant.SIDE_BAR_HELP_TITLE} />
+          </li>
+          <li className="mt-0.5 w-full">
+
+          </li>
+          <li className="mt-4 w-full">
+            <SidebarSection title={Constant.SIDE_BAR_ISSUES_TITLE} />
+          </li>
+          <li className="mt-0.5 w-full">
+
           </li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons"
 interface SidebarRootItemProps {
   title: string
   icon: IconDefinition
-  isActive: boolean
+  isActive?: boolean
 }
 
 const SidebarRootItem: React.FC<SidebarRootItemProps> = ({

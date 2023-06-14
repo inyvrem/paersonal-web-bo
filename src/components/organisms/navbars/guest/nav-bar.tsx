@@ -1,10 +1,12 @@
+import Container from "@/components/atoms/container/container"
+
 interface GuestNavbarProps {}
 
 const GuestNavbar: React.FC<GuestNavbarProps> = () => {
   return (
     <div className="container sticky top-0 z-110">
       <div className="flex flex-wrap -mx-3">
-        <div className="w-full max-w-full px-3 flex-0">
+        <Container>
           <nav className="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center justify-between w-full px-4 py-2 mx-6 my-4 shadow-soft-2xl bg-white/80 backdrop-blur-2xl backdrop-saturate-200 rounded-blur lg:flex-nowrap lg:justify-start">
             <div className="container flex flex-wrap items-center justify-between lg-max:overflow-hidden lg:flex-nowrap">
               <a className="py-2.5 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0">
@@ -53,7 +55,7 @@ const GuestNavbar: React.FC<GuestNavbarProps> = () => {
               </div>
             </div>
           </nav>
-        </div>
+        </Container>
       </div>
     </div>
   )

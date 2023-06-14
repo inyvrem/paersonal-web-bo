@@ -10,6 +10,8 @@ import {
   faBarsStaggered,
   faGear,
   faBell,
+  faRocket,
+  faBook
 } from "@fortawesome/free-solid-svg-icons"
 
 export namespace IconConstant {
@@ -23,4 +25,6 @@ export namespace IconConstant {
   export const NOTIFICATIONS: IconDefinition = faBell
   export const BURGER_MENU: IconDefinition = faBars
   export const BURGER_MENU_STAGGERED: IconDefinition = faBarsStaggered
+  export const ROCKET: IconDefinition = faRocket
+  export const BOOK: IconDefinition = faBook
 }

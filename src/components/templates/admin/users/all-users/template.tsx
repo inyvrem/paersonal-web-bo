@@ -6,13 +6,15 @@ import TableHeadItem from "@/components/atoms/table/head/table-head-item"
 import Table from "@/components/atoms/table/table"
 import Link from "next/link"
 import { RouteConstant } from "@/lib/constants/route-constant"
+import Container from "@/components/atoms/container/container"
+import Card from "@/components/atoms/card/card"
 
 interface AllUsersPageTemplateProps {}
 
 const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
   return (
-    <div className="w-full max-w-full px-3 flex-0">
-      <div className="relative flex flex-col min-w-0 break-words bg-white border-0 dark:bg-gray-950 dark:shadow-soft-dark-xl shadow-soft-xl rounded-2xl bg-clip-border">
+    <Container>
+      <Card>
         <div className="overflow-x-auto">
           <Table>
             <TableHead>
@@ -63,9 +65,7 @@ const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
                   <span className="dark:text-white">1</span>
                 </TableBodyItem>
                 <TableBodyItem className="leading-normal text-sm text-center">
-                  <Link
-                    href={RouteConstant.USERS + "10421"}
-                  >
+                  <Link href={RouteConstant.USERS + "10421"}>
                     <button
                       type="button"
                       className="py-1.8 px-3 text-xxs rounded-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white theme-color"
@@ -114,9 +114,7 @@ const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
                   <span className="dark:text-white">3</span>
                 </TableBodyItem>
                 <TableBodyItem className="leading-normal text-sm text-center">
-                  <Link
-                    href={RouteConstant.ALL_USERS + "/" + "10422"}
-                  >
+                  <Link href={RouteConstant.ALL_USERS + "/" + "10422"}>
                     <button
                       type="button"
                       className="py-1.8 px-3 text-xxs rounded-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white theme-color"
@@ -177,9 +175,7 @@ const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
                   <span className="dark:text-white">2</span>
                 </TableBodyItem>
                 <TableBodyItem className="leading-normal text-sm text-center">
-                  <Link
-                    href={RouteConstant.ALL_USERS + "/" + "10423"}
-                  >
+                  <Link href={RouteConstant.ALL_USERS + "/" + "10423"}>
                     <button
                       type="button"
                       className="py-1.8 px-3 text-xxs rounded-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white theme-color"
@@ -192,8 +188,8 @@ const AllUsersPageTemplate: React.FC<AllUsersPageTemplateProps> = () => {
             </TableBody>
           </Table>
         </div>
-      </div>
-    </div>
+      </Card>
+    </Container>
   )
 }
 

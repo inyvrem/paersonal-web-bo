@@ -99,7 +99,7 @@ const SignInTemplate: React.FC<SignInTemplateProps> = () => {
           </h4>
           <p className="text-white">
             The more effortless the writing looks, the more effort the writer
-            actually pui into the process.
+            actually put into the process.
           </p>
         </div>
       </div>

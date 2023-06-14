@@ -5,7 +5,7 @@ interface NewSectionPageTemplateProps {}
 
 const NewSectionPageTemplate: React.FC<NewSectionPageTemplateProps> = () => {
   return (
-    <Card padding="p-4 mt-6">
+    <Card extraClassName="p-4 mt-6">
       <h6 className="mb-0 dark:text-white">New Section</h6>
       <p className="mb-0 leading-normal text-sm">Create new section</p>
       <hr className="h-px mx-0 my-4 bg-transparent border-0 opacity-25 bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />

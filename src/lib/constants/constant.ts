@@ -9,6 +9,9 @@ export namespace Constant {
   export const SIDE_BAR_ADMIN_TITLE: string = "Admin"
   export const SIDE_BAR_USERS_TITLE: string = "Users"
   export const SIDE_BAR_SITES_TITLE: string = "Sites"
+  export const SIDE_BAR_DOCS_TITLE: string = "Docs"
+  export const SIDE_BAR_HELP_TITLE: string = "Help"
+  export const SIDE_BAR_ISSUES_TITLE: string = "ISSUES"
 
   export const SIDE_BAR_ALL_USERS_TITLE: string = "All Users"
   export const SIDE_BAR_CREATE_USER_TITLE: string = "Create User"

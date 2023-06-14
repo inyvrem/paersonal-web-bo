@@ -4,6 +4,7 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useMemo, useState } from "react"
 import "react-quill/dist/quill.snow.css"
+import Container from "@/components/atoms/container/container"
 
 interface EditSectionElementPageTemplateProps {}
 
@@ -42,7 +43,7 @@ const EditSectionElementPageTemplate: React.FC<
               <div className="flex-auto p-6">
                 <h5 className="font-bold dark:text-white">Element Image</h5>
                 <div className="flex flex-wrap -mx-3">
-                  <div className="w-full max-w-full px-3 flex-0">
+                  <Container>
                     <Image
                       src={"/img/team-1.jpg"}
                       width={500}
@@ -51,7 +52,7 @@ const EditSectionElementPageTemplate: React.FC<
                       className="w-full h-[17.5rem] mt-4 rounded-xl shadow-soft-3xl"
                       alt="section_element_image"
                     />
-                  </div>
+                  </Container>
                   <div className="w-full max-w-full px-3 mt-6 flex-0">
                     <div className="flex">
                       <button
@@ -79,7 +80,7 @@ const EditSectionElementPageTemplate: React.FC<
                   Element Information
                 </h5>
                 <div className="flex flex-wrap -mx-3">
-                  <div className="w-full max-w-full px-3 flex-0">
+                  <Container>
                     <label
                       htmlFor="sectionElementName"
                       className="mt-6 mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
@@ -93,10 +94,10 @@ const EditSectionElementPageTemplate: React.FC<
                       readOnly
                       className="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none"
                     />
-                  </div>
+                  </Container>
                 </div>
                 <div className="flex flex-wrap -mx-3">
-                  <div className="w-full max-w-full px-3 flex-0">
+                  <Container>
                     <label
                       htmlFor="sectionElementDescription"
                       className="mt-6 mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
@@ -109,10 +110,10 @@ const EditSectionElementPageTemplate: React.FC<
                       value={descriptionValue}
                       onChange={setDescriptionValue}
                     />
-                  </div>
+                  </Container>
                 </div>
                 <div className="flex flex-wrap -mx-3">
-                  <div className="w-full max-w-full px-3 flex-0">
+                  <Container>
                     <label
                       htmlFor="sectionElementToggle"
                       className="mt-6 mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
@@ -123,7 +124,7 @@ const EditSectionElementPageTemplate: React.FC<
                       <input type="checkbox" className="sr-only peer" />
                       <div className="w-11 h-6 duration-250 ease-soft-in-out bg-slate-800/10 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-slate-800/95 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-slate-800/95"></div>
                     </label>
-                  </div>
+                  </Container>
                 </div>
               </div>
             </div>
