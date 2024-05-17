@@ -88,6 +88,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
                     RouteConstant.PAGES + "home" + RouteConstant.ALL_SECTIONS
                   )}
                 />
+                <SidebarChildItem
+                  title={"React Beautiful DND Demo"}
+                  link={RouteConstant.PAGES + "home" + "/react-beautiful-dnd-demo"}
+                  isActive={currentPath === RouteConstant.PAGES + "home"}
+                />
               </SidebarChildDisclosureItem>
             </SidebarRootDisclosureItem>
           </li>
