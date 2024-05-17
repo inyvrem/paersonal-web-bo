@@ -11,7 +11,10 @@ import {
   faGear,
   faBell,
   faRocket,
-  faBook
+  faBook,
+  faCubes,
+  faShieldHalved,
+  faTrash
 } from "@fortawesome/free-solid-svg-icons"
 
 export namespace IconConstant {
@@ -27,4 +30,7 @@ export namespace IconConstant {
   export const BURGER_MENU_STAGGERED: IconDefinition = faBarsStaggered
   export const ROCKET: IconDefinition = faRocket
   export const BOOK: IconDefinition = faBook
+  export const CUBE: IconDefinition = faCubes
+  export const SHIELD: IconDefinition = faShieldHalved
+  export const TRASH: IconDefinition = faTrash
 }
