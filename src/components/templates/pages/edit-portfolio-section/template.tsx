@@ -11,31 +11,34 @@ import TableBodyItem from "@/components/atoms/table/body/table-body-item"
 import Card from "@/components/atoms/card/card"
 import { RouteConstant } from "@/lib/constants/route-constant"
 import Container from "@/components/atoms/container/container"
+import Popout from "@/components/atoms/popup/popout"
 import axios from "axios"
 
-interface EditSectionPageTemplateProps {
+interface EditPortfolioSectionPageTemplateProps {
   params: { page: string; section: string }
 }
 
-const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = ({
+const EditPortfolioSectionPageTemplate: React.FC<EditPortfolioSectionPageTemplateProps> = ({
   params,
 }) => {
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill"), { ssr: false }),
     []
   )
-  const [descriptionValue, setDescriptionValue] = useState("")
   const { page, section } = params
   const currentPath =
     RouteConstant.PAGES + page + "/" + section + RouteConstant.ELEMENTS
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
+    const [subPortfolioContents, setSubPortfolioContents] = useState([])
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
 
+
     const updateData = async () => {
-      axios.post('http://localhost:8082/back-office/secure/web-manage/web-hero/details/update', {
-        webHeroId : '24f2b6f0-8574-4402-b6f8-28fac29b885a',
+      axios.post('http://localhost:8082/back-office/secure/web-manage/web-portfolio/details/update', {
+        webPortfolioId : '09e33cad-13d4-483d-ab9e-f76032704ec7',
         title,
         description
       })
@@ -43,23 +46,35 @@ const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = ({
         setShowSuccess(true);
         console.log("updated", response);
       }, (error) => {
-        setShowSuccess(false);
         console.log(error);
       });
     }
 
-    const closeSuccessMessage = () => {
-      setShowSuccess(false); 
-    };
+    const handleSave = async (title, description) => {
+        try {
+          const response = await axios.post('http://localhost:8082/back-office/secure/web-manage/web-portfolio/sub-portfolio/create', {
+            webPortfolioId : '09e33cad-13d4-483d-ab9e-f76032704ec7',
+            title,
+            description,
+          });
+          setSubPortfolioContents([...subPortfolioContents, response.data]);
+          setIsModalOpen(false);
+          window.location.reload(); 
+        } catch (error) {
+          console.error('Error posting data:', error);
+        }
+      };
+
 
     useEffect(() => {
       const fetchDataForPosts = async () => {
-        axios.get('http://localhost:8082/back-office/admin/web-manage/web-hero/details/24f2b6f0-8574-4402-b6f8-28fac29b885a')
+        axios.get('http://localhost:8082/back-office/admin/web-manage/web-portfolio/details/09e33cad-13d4-483d-ab9e-f76032704ec7')
         .then((response) => {
           console.log("fetched", response);
           let data = response.data
           setTitle(data.title)
           setDescription(data.description)
+          setSubPortfolioContents(data.subPortfolioContents)
         }, (error) => {
           console.log(error);
         });
@@ -68,19 +83,30 @@ const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = ({
       fetchDataForPosts();
     }, []);
 
+    const handleAddClick = () => {
+        setIsModalOpen(true);
+      };
+    
+    const handleCloseModal = () => {
+    setIsModalOpen(false);
+    };
+    
+    const closeSuccessMessage = () => {
+      setShowSuccess(false); 
+    };
+
   return (
     <>
       <div className="flex flex-wrap -mx-3">
         <div className="w-full max-w-full px-3 shrink-0 lg:flex-0 lg:w-6/12">
           <h4 className="dark:text-white">Make the changes below</h4>
           <p>
-            We&#39;re constantly trying to express ourselves and actualize our
-            dreams. If you have the opportunity to play.
+            You can edit your project from this page
           </p>
         </div>
         <div className="flex flex-col justify-center w-full max-w-full px-3 text-right shrink-0 lg:flex-0 lg:w-6/12">
           <button
-          onClick={updateData}
+            onClick={updateData}
             type="submit"
             className="inline-block px-6 py-3 mt-2 mb-0 mr-auto font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer lg:ml-auto lg:mr-0 lg:mt-0 hover:scale-102 active:opacity-85 hover:shadow-soft-xs theme-color leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25"
           >
@@ -177,27 +203,61 @@ const EditSectionPageTemplate: React.FC<EditSectionPageTemplateProps> = ({
           
                 </Container>
               </div>
-              {/* <div className="flex flex-wrap -mx-3">
-                <Container>
-                  <label
-                    htmlFor="sectionToggle"
-                    className="mt-6 mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80"
-                  >
-                    Visibility
-                  </label>
-                  <label className="relative block items-center cursor-pointer">
-                    <input type="checkbox" className="sr-only peer" />
-                    <div className="w-11 h-6 duration-250 ease-soft-in-out bg-slate-800/10 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-slate-800/95 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-slate-800/95"></div>
-                  </label>
-                </Container>
-              </div> */}
+              
             </div>
           </div>
         </div>
       </div>
-      
+      <div className="flex flex-wrap mt-6 -mx-3">
+        <Card>
+        <div className="flex items-center justify-between px-6 pt-6">
+          <h5 className="px-6 pt-6 font-bold dark:text-white">Sublist</h5>
+            <button
+            type="button"
+            className="inline-block px-8 py-2 mr-2 text-xs font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer ease-soft-in leading-pro tracking-tight-soft theme-color shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85"
+            onClick={handleAddClick}
+             >
+                Add
+            </button>
+        </div>
+          <Table>
+            <TableBody>
+            {subPortfolioContents.map((item)=> 
+              <tr key ={item.subAboutId} >
+                <TableBodyItem className="w-full">
+                  <div className="flex px-2 py-1">
+                    <div>
+                      <Image
+                        className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
+                        src={"/img/team-1.jpg"}
+                        width={500}
+                        height={500}
+                        alt="avatar image"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <h6 className="mb-0 leading-normal text-sm dark:text-white">
+                      {item.title}
+                      </h6>
+                    </div>
+                  </div>
+                </TableBodyItem>
+                <TableBodyItem className="w-full">
+                  <Link href={`${currentPath}service-1${RouteConstant.EDIT}`}>
+                    <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
+                      <button type="button">Edit</button>
+                    </div>
+                  </Link>
+                </TableBodyItem>
+              </tr>
+            )}
+            </TableBody>
+          </Table>
+          <Popout isOpen={isModalOpen} onClose={handleCloseModal} onSave={handleSave} />
+        </Card>
+      </div>
     </>
   )
 }
 
-export default EditSectionPageTemplate
+export default EditPortfolioSectionPageTemplate

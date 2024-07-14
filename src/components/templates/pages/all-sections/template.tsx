@@ -6,6 +6,7 @@ import TableBodyItem from "@/components/atoms/table/body/table-body-item"
 import { RouteConstant } from "@/lib/constants/route-constant"
 import Card from "@/components/atoms/card/card"
 import Container from "@/components/atoms/container/container"
+import { useEffect } from "react"
 
 interface AllSectionsPageTemplateProps {
   params: { page: string; section: string }
@@ -56,6 +57,7 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
                     </Link>
                   </TableBodyItem>
                 </tr>
+
                 <tr>
                   <TableBodyItem>
                     <div className="flex px-2 py-1">
@@ -70,42 +72,17 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
                       </div>
                       <div className="flex flex-col justify-center">
                         <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          About me
+                          My Skills
                         </h6>
                       </div>
                     </div>
                   </TableBodyItem>
                   <TableBodyItem>
+                  <Link href={currentPath  + "about" + RouteConstant.EDIT_ABOUT}>
                     <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
                       <button type="button">Edit</button>
                     </div>
-                  </TableBodyItem>
-                </tr>
-                <tr>
-                  <TableBodyItem>
-                    <div className="flex px-2 py-1">
-                      <div>
-                        <Image
-                          className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
-                          src={"/img/team-3.jpg"}
-                          width={500}
-                          height={500}
-                          alt="avatar image"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          My Services
-                        </h6>
-                      </div>
-                    </div>
-                  </TableBodyItem>
-                  <TableBodyItem>
-                    <Link href={"/"}>
-                      <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
-                        Edit
-                      </div>
-                    </Link>
+                  </Link>
                   </TableBodyItem>
                 </tr>
 
@@ -123,42 +100,20 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
                       </div>
                       <div className="flex flex-col justify-center">
                         <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          My Experiences
+                          My Projects
                         </h6>
                       </div>
                     </div>
                   </TableBodyItem>
                   <TableBodyItem>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
+                  <Link href={currentPath  + "portfolio" + RouteConstant.EDIT_PORTFOLIO}>
+                    <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
                       <button type="button">Edit</button>
                     </div>
+                  </Link>
                   </TableBodyItem>
                 </tr>
-                <tr>
-                  <TableBodyItem>
-                    <div className="flex px-2 py-1">
-                      <div>
-                        <Image
-                          className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
-                          src={"/img/team-2.jpg"}
-                          width={500}
-                          height={500}
-                          alt="avatar image"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          My Recent Projects
-                        </h6>
-                      </div>
-                    </div>
-                  </TableBodyItem>
-                  <TableBodyItem>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
-                      <button type="button">Edit</button>
-                    </div>
-                  </TableBodyItem>
-                </tr>
+               
                 <tr>
                   <TableBodyItem>
                     <div className="flex px-2 py-1">
@@ -179,97 +134,12 @@ const AllSectionsPageTemplate: React.FC<AllSectionsPageTemplateProps> = ({
                     </div>
                   </TableBodyItem>
                   <TableBodyItem>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
+                    <div className="mb-0 mr-6 text-center md:text-right text-sm text-slate-400 dark:text-white/80">
                       <button type="button">Edit</button>
                     </div>
                   </TableBodyItem>
                 </tr>
 
-                <tr>
-                  <TableBodyItem>
-                    <div className="flex px-2 py-1">
-                      <div>
-                        <Image
-                          className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
-                          src={"/img/team-1.jpg"}
-                          width={500}
-                          height={500}
-                          alt="avatar image"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          Team members
-                        </h6>
-                      </div>
-                    </div>
-                  </TableBodyItem>
-                  <TableBodyItem>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
-                      <button type="button">Edit</button>
-                    </div>
-                  </TableBodyItem>
-                </tr>
-                <tr>
-                  <TableBodyItem>
-                    <div className="flex px-2 py-1">
-                      <div>
-                        <Image
-                          className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
-                          src={"/img/team-2.jpg"}
-                          width={500}
-                          height={500}
-                          alt="avatar image"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          Contact me
-                        </h6>
-                      </div>
-                    </div>
-                  </TableBodyItem>
-                  <TableBodyItem>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
-                      <button type="button">Edit</button>
-                    </div>
-                  </TableBodyItem>
-                </tr>
-                <tr>
-                  <TableBodyItem dividerLine={false}>
-                    <div className="flex px-2 py-1">
-                      <div>
-                        <Image
-                          className="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 text-sm ease-soft-in-out h-9 w-9 rounded-xl"
-                          src={"/img/team-3.jpg"}
-                          width={500}
-                          height={500}
-                          alt="avatar image"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 leading-normal text-sm dark:text-white">
-                          Laurent PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent PerrierLaurent
-                          PerrierLaurent PerrierLaurent Perrier
-                        </h6>
-                      </div>
-                    </div>
-                  </TableBodyItem>
-                  <TableBodyItem dividerLine={false}>
-                    <div className="mb-0 mr-6 text-center text-sm text-slate-400 dark:text-white/80">
-                      <button type="button">Edit</button>
-                    </div>
-                  </TableBodyItem>
-                </tr>
               </TableBody>
             </Table>
           </Card>

@@ -10,18 +10,18 @@ const Footer: React.FC<FooterProps> = () => {
         <div className="flex flex-wrap items-center -mx-3 lg:justify-between">
           <div className="w-full max-w-full px-3 mt-0 mb-6 shrink-0 lg:mb-0 lg:w-1/2 lg:flex-none">
             <div className="leading-normal text-center text-sm text-slate-500 lg:text-left">
-              © 2023, Made with{" "}
+              © 2024, Made with{" "}
               <FontAwesomeIcon icon={faHeart} className="w-3.5 -mt-0.5" /> by{" "}
-              <strong>Jam2</strong> for a better web.
+              <strong>Mervyn</strong> for a better web.
             </div>
           </div>
           <div className="w-full max-w-full px-3 mt-0 shrink-0 lg:w-1/2 lg:flex-none">
             <ul className="flex flex-wrap justify-center pl-0 mb-0 list-none lg:justify-end">
-              <li>
+              {/* <li>
                 <a className="block px-4 pt-0 pb-1 font-normal transition-colors ease-soft-in-out text-sm text-slate-500">
                   Jam2
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a className="block px-4 pt-0 pb-1 font-normal transition-colors ease-soft-in-out text-sm text-slate-500">
                   About us

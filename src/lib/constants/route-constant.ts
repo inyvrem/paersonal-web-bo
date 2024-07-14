@@ -3,6 +3,8 @@ export namespace RouteConstant {
   export const HOME: string = "/"
   export const SIGN_IN: string = "/sign-in"
   export const EDIT: string = "/edit"
+  export const EDIT_ABOUT: string = "/edit-about"
+  export const EDIT_PORTFOLIO: string = "/edit-portfolio"
   export const ELEMENTS: string = "/elements/"
 
   // Side bar
